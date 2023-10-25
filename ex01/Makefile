@@ -6,7 +6,7 @@
 #    By: pvong <marvin@42lausanne.ch>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 12:45:27 by pvong             #+#    #+#              #
-#    Updated: 2023/10/25 14:13:31 by pvong            ###   ########.fr        #
+#    Updated: 2023/10/25 15:47:08 by pvong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC_DIR = src
 SRC = Contact.cpp \
 		PhoneBook.cpp \
-
+		main.cpp
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.cpp=%.o)
