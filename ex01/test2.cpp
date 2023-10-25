@@ -141,8 +141,10 @@ void handleCtrlD() {
             std::cout << "Nickname: " << contact.getNickname() << std::endl;
             std::cout << "Phone Number: " << contact.getPhoneNumber() << std::endl;
             std::cout << "Darkest Secret: " << contact.getDarkestSecret() << std::endl;
-        } else if (indexToDisplay != 0) {
-            std::cout << "Invalid index or canceled." << std::endl;
+        } else if (indexToDisplay == 0) {
+        std::cout << "Canceled searching." << std::endl;
+        } else {
+        std::cout << "Invalid index." << std::endl;
         }
     }
 
