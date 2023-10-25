@@ -6,7 +6,7 @@
 /*   By: pvong <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:32:28 by pvong             #+#    #+#             */
-/*   Updated: 2023/10/25 15:47:34 by pvong            ###   ########.fr       */
+/*   Updated: 2023/10/25 16:19:20 by pvong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int main(void) {
             std::cout << "Goodbye!" << std::endl;
             break;
         } else {
+            std::cout << BLACK << MSG_SEP << RESET << std::endl;
             std::cout << "Invalid choice. Please try again." << std::endl;
         }
 
