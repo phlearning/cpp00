@@ -6,14 +6,17 @@
 /*   By: pvong <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:09:42 by pvong             #+#    #+#             */
-/*   Updated: 2023/10/25 13:33:00 by pvong            ###   ########.fr       */
+/*   Updated: 2023/10/25 15:17:52 by pvong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
+#include "Color.hpp"
 #include <string>
+
+#define MSG_SEP "================================================="
 
 class Contact {
 
@@ -36,7 +39,6 @@ public:
     ~Contact(void);
 
 private:
-    static int _nbInst;
     std::string _firstName;
     std::string _lastName;
     std::string _nickname;

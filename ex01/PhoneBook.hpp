@@ -6,15 +6,18 @@
 /*   By: pvong <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:25:30 by pvong             #+#    #+#             */
-/*   Updated: 2023/10/25 13:43:26 by pvong            ###   ########.fr       */
+/*   Updated: 2023/10/25 15:25:30 by pvong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <string>
 #include "Contact.hpp"
+#include "Color.hpp"
+#include <string>
+
+#define MAX_CONTACT 8
 
 class PhoneBook {
 
@@ -25,11 +28,11 @@ public:
     void displayContacts(void);
     void searchContact(void);
     void handleCtrlD(void);
+    int isNotValidNumber(std::string phoneNumber);
     ~PhoneBook(void);
 
 private:
-    static const int _maxContacts = 8;
-    Contact _contacts[_maxContacts];
+    Contact _contacts[MAX_CONTACT];
     int _numContacts;
     int _oldestIndex;
 };

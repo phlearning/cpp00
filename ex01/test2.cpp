@@ -159,10 +159,9 @@ int main() {
 
     while (true) {
         std::cout << "Phonebook Menu:" << std::endl;
-        std::cout << "ADD. Add Contact" << std::endl;
-        std::cout << "DISPLAY. Display Contacts" << std::endl;
+        std::cout << "ADD: Add Contact" << std::endl;
         std::cout << "SEARCH. Search Contact" << std::endl;
-        std::cout << "QUIT. Quit" << std::endl;
+        std::cout << "EXIT: Quit" << std::endl;
 
         std::string choice;
         std::cin >> choice;
@@ -190,7 +189,7 @@ int main() {
             myPhonebook.displayContacts();
         } else if (choice == "SEARCH") {
             myPhonebook.searchContact();
-        } else if (choice == "QUIT") {
+        } else if (choice == "EXIT") {
             std::cout << "Goodbye!" << std::endl;
             break;
         } else {
