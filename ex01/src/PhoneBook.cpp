@@ -6,7 +6,7 @@
 /*   By: pvong <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:27:17 by pvong             #+#    #+#             */
-/*   Updated: 2023/10/25 15:45:57 by pvong            ###   ########.fr       */
+/*   Updated: 2023/10/27 15:48:20 by pvong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@
 #include <cstdlib>
 #include <ctype.h>
 
-PhoneBook::PhoneBook(void) : _numContacts(0), _oldestIndex(0) {
-
-    std::cout << BOLDGREEN << "Constructor called " << RESET << __func__ << std::endl;
-}
+PhoneBook::PhoneBook(void) : _numContacts(0), _oldestIndex(0) {}
 
 void    PhoneBook::handleCtrlD(void) {
     
@@ -70,17 +67,25 @@ void    PhoneBook::displayContacts(void) {
 
 void PhoneBook::searchContact(void) {
     std::cout << BLACK << MSG_SEP << RESET << std::endl;
+    // if (this->_numContacts == 0) {
+    //     std::cout << "PhoneBook is empty. Please add a contact before searching" << std::endl;
+    //     return ;
+    // }
     std::cout << "All Contacts:" << std::endl;
     displayContacts();
     std::cout << BLACK << MSG_SEP << RESET << std::endl;
 
     int indexToDisplay;
     std::cout << "Enter the index of the contact you want to display (0 to cancel): ";
-    std::cin >> indexToDisplay;
-
-    handleCtrlD();
+    if (!(std::cin >> indexToDisplay) || indexToDisplay < 0) {
+        handleCtrlD();
+        std::cout << "Invalid input: Exiting searching." << std::endl;
+        std::cin.clear();
+        std::cin.ignore();
+        return ;
+    }
     std::cout << BLACK << MSG_SEP << RESET << std::endl;
-    if (indexToDisplay > 0 && indexToDisplay <= this->_numContacts) {
+    if (indexToDisplay > 0 && indexToDisplay <= _numContacts) {
         int contactIndex = indexToDisplay - 1;
         std::cout << "Contact details:" << std::endl;
         std::cout << BLACK << MSG_SEP << RESET << std::endl;
@@ -116,7 +121,4 @@ int    PhoneBook::isNotValidNumber(std::string phoneNumber) {
     return (0);
 }
 
-PhoneBook::~PhoneBook(void) {
-
-    std::cout << BOLDRED << "Destructor called " << RESET << __func__ << std::endl;
-}
+PhoneBook::~PhoneBook(void) {}
