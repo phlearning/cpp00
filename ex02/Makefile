@@ -6,7 +6,7 @@
 #    By: pvong <marvin@42lausanne.ch>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 12:45:27 by pvong             #+#    #+#              #
-#    Updated: 2023/10/25 16:36:16 by pvong            ###   ########.fr        #
+#    Updated: 2023/10/27 14:27:43 by pvong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ INC = -I include
 SRC_DIR = src
 OBJ_DIR = obj
 
-SRC = Account.cpp
+SRC = Account.cpp \
+		tests.cpp
 
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))
