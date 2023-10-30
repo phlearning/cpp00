@@ -6,33 +6,33 @@
 /*   By: pvong <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:32:28 by pvong             #+#    #+#             */
-/*   Updated: 2023/10/27 15:53:25 by pvong            ###   ########.fr       */
+/*   Updated: 2023/10/30 11:25:15 by pvong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-#include <iostream>
-#include <iomanip>
 #include <cstdlib>
+#include <iomanip>
+#include <iostream>
 
 int main(void) {
     PhoneBook myPhoneBook;
 
     while (true) {
-        std::cout << BLACK << MSG_SEP << RESET << std::endl;
+        std::cout << BOLDBLACK << MSG_SEP << RESET << std::endl;
         std::cout << "Phonebook Menu:" << std::endl;
         std::cout << "ADD: Add Contact" << std::endl;
         std::cout << "SEARCH: Search Contact" << std::endl;
         std::cout << "EXIT: Quit the program" << std::endl;
-        std::cout << BLACK << MSG_SEP << RESET << std::endl;
+        std::cout << BOLDBLACK << MSG_SEP << RESET << std::endl;
 
         std::string choice;
         std::cin >> choice;
         myPhoneBook.handleCtrlD();
 
         if (choice == "ADD") {
-            std::cout << BLACK << MSG_SEP << RESET << std::endl;
+            std::cout << BOLDBLACK << MSG_SEP << RESET << std::endl;
             std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
             std::cout << "Enter first name: ";
             std::cin.ignore();
@@ -48,13 +48,12 @@ int main(void) {
             std::getline(std::cin, phoneNumber);
             while (myPhoneBook.isNotValidNumber(phoneNumber)) {
                 myPhoneBook.handleCtrlD();
-                std::cout << "Enter a valid phone number: ";
+                std::cout << "Enter a valid phone number (Ex: 0123456789): ";
                 std::getline(std::cin, phoneNumber);
             }
             myPhoneBook.handleCtrlD();
             std::cout << "Enter darkest secret: ";
             std::getline(std::cin, darkestSecret);
-            std::cout << BLACK << MSG_SEP << RESET << std::endl;
             myPhoneBook.addContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
         } else if (choice == "SEARCH") {
             myPhoneBook.searchContact();
@@ -62,7 +61,7 @@ int main(void) {
             std::cout << "Goodbye!" << std::endl;
             break;
         } else {
-            std::cout << BLACK << MSG_SEP << RESET << std::endl;
+            std::cout << BOLDBLACK << MSG_SEP << RESET << std::endl;
             std::cout << "Invalid choice. Please try again." << std::endl;
         }
 

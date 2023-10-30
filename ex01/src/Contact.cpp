@@ -6,7 +6,7 @@
 /*   By: pvong <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:31:49 by pvong             #+#    #+#             */
-/*   Updated: 2023/10/27 15:10:43 by pvong            ###   ########.fr       */
+/*   Updated: 2023/10/30 11:28:38 by pvong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void Contact::display(void) {
     if (this->_nickname.length() > 10) {
         truncatedNickname[9] = '.';
     }
-    std::cout << std::right << std::setw(10) << truncatedFirstName << " | " << std::setw(10) << truncatedLastName << " | " << std::setw(10) << truncatedNickname << std::endl;
+    std::cout << std::right << std::setw(10) << truncatedFirstName << "|" << std::setw(10) << truncatedLastName << "|" << std::setw(10) << truncatedNickname << std::endl;
 }
 
 std::string Contact::getFirstName() const {
